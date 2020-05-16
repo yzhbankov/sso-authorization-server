@@ -1,0 +1,26 @@
+{
+  "name": "sso-auth-service",
+  "version": "1.0.0",
+  "description": "Authorization server for an SSO and OAuth2.0",
+  "main": "app.mjs",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pino": "^6.2.1",
+    "pino-pretty": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://yzhbankov@github.com/yzhbankov/sso-authorization-server.git"
+  },
+  "author": "yzhbankov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yzhbankov/sso-authorization-server/issues"
+  },
+  "homepage": "https://github.com/yzhbankov/sso-authorization-server#readme"
+}
