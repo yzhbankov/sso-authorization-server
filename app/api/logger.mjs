@@ -8,9 +8,9 @@ export function setLogger(logger) {
 }
 
 export default {
-    fatal: (...args) => { _LOGGER.fatal(args) },
-    error: (...args) => { _LOGGER.error(args); },
-    warn: (...args) => { _LOGGER.warn(args); },
-    info: (...args) => { _LOGGER.info(args); },
-    debug: (...args) => { _LOGGER.debug(args); },
+    fatal:  (...args)   =>  { _LOGGER.fatal(args) },
+    error:  (...args)   =>  { _LOGGER.error(args); },
+    warn:   (...args)   =>  { _LOGGER.warn(args); },
+    info:   (...args)   =>  { _LOGGER.info(args); },
+    debug:  (...args)   =>  { _LOGGER.debug(args); },
 }

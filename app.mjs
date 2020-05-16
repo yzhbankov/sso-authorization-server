@@ -1,14 +1,14 @@
 import * as RestAPI from './app/api/rest-api/app.mjs';
 import * as API     from './app/api/index.mjs';
 import Logger       from './app/system/Logger.mjs';
-
+import config       from './app/config.cjs';
 
 const logger = new Logger();
 
 API.setLogger(logger);
 
 RestAPI.start({
-    serverPort: 3000
+    serverPort: config.serverPort
 });
 
 process.on('SIGTERM', async () => {
