@@ -1,6 +1,6 @@
 import LIVR from 'livr';
 
-
+// todo: return error on validation error
 export default class UseCaseBase {
     async run(params) {
         const cleanParams = await this.validate(params);

@@ -8,6 +8,11 @@ export default class Show extends Base {
 
     async execute({ id }) {
         try {
+            if (!id) {
+                return new Promise((resolve, reject) => {
+                    resolve({ users: [ { name: 'User name', id: 1 }, { name: 'User name', id: 2 } ]});
+                })
+            }
             return new Promise((resolve, reject) => {
                 resolve({ name: 'User name', id });
             })
