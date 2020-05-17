@@ -1,5 +1,6 @@
-
+import { makeRouterHandler } from '../../../../utils/useCaseRunner.mjs';
+import Show from '../../../../use-cases/v1/users/Show.mjs';
 
 export default {
-    show: (req, res, next) =>  { res.send('Hello'); }
+    show: makeRouterHandler(Show, req => ({ id: req.params.id }))
 }
