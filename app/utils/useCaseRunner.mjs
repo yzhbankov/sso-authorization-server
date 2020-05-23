@@ -41,6 +41,7 @@ export function makeRouterHandler(UseCaseClass, mapToParams, mapToResponse) {
                 res.json(result);
             }
         } catch (err) {
+            // todo: add errors handling and generation. add errors classes
             if (err.code === 'NOT_FOUND_ERROR') {
                 logger.error(err.message);
                 res.status(404)
