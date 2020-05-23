@@ -1,3 +1,4 @@
+import lodash from 'lodash';
 import logger from '../api/logger.mjs';
 
 
@@ -40,7 +41,24 @@ export function makeRouterHandler(UseCaseClass, mapToParams, mapToResponse) {
                 res.json(result);
             }
         } catch (err) {
-            logger.error(err);
+            if (err.code === 'NOT_FOUND_ERROR') {
+                logger.error(err.message);
+                res.status(404)
+                    .json(err);
+            } else if (err.code === 'VALIDATION_ERROR') {
+                logger.error(err.message);
+                res.status(422)
+                    .json(err);
+            } else {
+                const message = lodash.isObject(err) ? err.message : err;
+                const stack = err.stack;
+                logger.error(message);
+                res.status(500)
+                    .json({
+                        message,
+                        stack,
+                    });
+            }
         }
     }
 }

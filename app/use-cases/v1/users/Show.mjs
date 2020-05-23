@@ -1,5 +1,5 @@
 import Base from '../../Base.mjs';
-
+import User from '../../../model/User.mjs';
 
 export default class Show extends Base {
     static validationRules = {
@@ -9,13 +9,14 @@ export default class Show extends Base {
     async execute({ id }) {
         try {
             if (!id) {
-                return new Promise((resolve, reject) => {
-                    resolve({ users: [ { name: 'User name', id: 1 }, { name: 'User name', id: 2 } ]});
-                })
+                const users = await User.findAllUsers();
+
+                return { users }
             }
-            return new Promise((resolve, reject) => {
-                resolve({ name: 'User name', id });
-            })
+
+            const user = await User.findById(id);
+
+            return { users: [user] };
         } catch(err) {
             throw Error(err);
         }

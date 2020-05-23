@@ -1,4 +1,5 @@
 import * as RestAPI from './app/api/rest-api/app.mjs';
+import * as Model   from  './app/model/index.mjs';
 import * as API     from './app/api/index.mjs';
 import Logger       from './app/system/Logger.mjs';
 import config       from './app/config.cjs';
@@ -40,6 +41,8 @@ process.on('uncaughtException', error => {
         error : error.stack
     });
 });
+
+Model.initModels(config.db);
 
 async function exit() {
     await RestAPI.stop();
