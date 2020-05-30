@@ -49,7 +49,7 @@ export function makeRouterHandler(UseCaseClass, mapToParams, mapToResponse) {
             } else if (err.code === 'VALIDATION_ERROR') {
                 logger.error(err.message);
                 res.status(422)
-                    .json(err);
+                    .json(err.message);
             } else {
                 const message = lodash.isObject(err) ? err.message : err;
                 const stack = err.stack;

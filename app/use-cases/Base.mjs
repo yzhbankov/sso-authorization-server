@@ -1,7 +1,7 @@
 import LIVR from 'livr';
-import error from 'http-errors';
+import Exception from '../model/Exception.mjs';
 
-// todo: return error on validation error
+
 export default class UseCaseBase {
     #validator = null;
 
@@ -13,7 +13,7 @@ export default class UseCaseBase {
             }
             const errors = this.#validator.getErrors()
 
-            throw new Error({
+            throw new Exception({
                 code: 'VALIDATION_ERROR',
                 message: JSON.stringify(errors)
             })
