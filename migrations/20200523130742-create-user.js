@@ -8,7 +8,7 @@ module.exports = {
       status:     { type: Sequelize.ENUM('ACTIVE', 'BLOCKED', 'PENDING'), defaultValue: 'ACTIVE' },
       email:      { type: Sequelize.STRING, allowNull: false },
       createdAt:  { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
-      removedAt:  { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
+      removedAt:  { type: Sequelize.DATE, defaultValue: null },
       updatedAt:  { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
       role:       { type: Sequelize.STRING, defaultValue: '' },
       password:   { type: Sequelize.STRING, defaultValue: '' },

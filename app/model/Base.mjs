@@ -1,4 +1,5 @@
 import Sequelize from 'sequelize';
+import Exception from './Exception.mjs';
 
 
 export default class Base extends Sequelize.Model {
@@ -7,11 +8,10 @@ export default class Base extends Sequelize.Model {
     }
 
     static async findById(id) {
-        console.log(id);
         const entity = await this.findOne({ where: { id } });
 
         if (!entity) {
-            throw new Error({
+            throw new Exception({
                 message : `There is no ${this.name} with id = "${id}"`,
                 field   : 'id'
             });
@@ -24,7 +24,7 @@ export default class Base extends Sequelize.Model {
         const result = await this.findAll();
 
         if (!result) {
-            throw Error({
+            throw new Exception({
                 message: 'There is no users'
             })
         }
@@ -32,9 +32,9 @@ export default class Base extends Sequelize.Model {
         return result;
     }
 
-    static async save(user) {
+    static async create(user) {
         try {
-            return await super.save(...user);
+            return await super.create(user);
         } catch (err) {
             throw err;
         }

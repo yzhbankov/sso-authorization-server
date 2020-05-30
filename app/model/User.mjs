@@ -12,7 +12,7 @@ export default class User extends Base {
         status:     { type: DT.ENUM('ACTIVE', 'BLOCKED', 'PENDING'), defaultValue: 'ACTIVE' },
         email:      { type: DT.STRING, allowNull: false, unique: true },
         createdAt:  { type: DT.DATE, defaultValue: new Date() },
-        removedAt:  { type: DT.DATE, defaultValue: new Date() },
+        removedAt:  { type: DT.DATE, defaultValue: null },
         updatedAt:  { type: DT.DATE, defaultValue: new Date() },
         role:       { type: DT.STRING, defaultValue: '' },
         password:   { type: DT.STRING, defaultValue: '' },
