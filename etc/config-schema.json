@@ -9,5 +9,10 @@
       "port": ["required", "positive_integer"],
       "dialect": ["required", "string"]
     }
+  },
+  "auth": {
+    "nested_object": {
+      "secret": ["required", "string"]
+    }
   }
 }

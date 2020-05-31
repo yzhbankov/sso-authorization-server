@@ -10,4 +10,6 @@ router.get('/users/:id', controllers.users.show);
 router.delete('/users/:id', controllers.users.remove);
 router.post('/users', controllers.users.save);
 
+router.post('/session/create', controllers.session.create);
+
 export default router;

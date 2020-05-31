@@ -8,5 +8,9 @@
     "host": "{{DB_HOST}}",
     "port": "{{DB_PORT}}",
     "dialect": "{{DB_DIALECT}}"
+  },
+
+  "auth": {
+    "secret": "{{AUTH_SECRET}}"
   }
 }
