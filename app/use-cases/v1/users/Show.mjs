@@ -1,5 +1,6 @@
-import Base from '../../Base.mjs';
-import User from '../../../model/User.mjs';
+import Base     from '../../Base.mjs';
+import User     from '../../../model/User.mjs';
+
 
 export default class Show extends Base {
     static validationRules = {

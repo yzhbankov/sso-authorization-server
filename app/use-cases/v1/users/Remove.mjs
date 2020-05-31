@@ -1,6 +1,6 @@
-import Base from '../../Base.mjs';
-import User from '../../../model/User.mjs';
-import Exception from '../../../model/Exception.mjs';
+import Base         from '../../Base.mjs';
+import User         from '../../../model/User.mjs';
+import Exception    from '../../../model/Exception.mjs';
 
 
 export default class Remove extends Base {

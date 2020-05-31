@@ -1,5 +1,5 @@
-import LIVR from 'livr';
-import Exception from '../model/Exception.mjs';
+import LIVR         from 'livr';
+import Exception    from '../model/Exception.mjs';
 
 
 export default class UseCaseBase {
