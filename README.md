@@ -10,3 +10,4 @@ The server should provide next functionality:
  - provide login UI;
  - server should send an invitation email on user creation;
  - setting the password should be implemented through the temporary link;
+ - should default user;

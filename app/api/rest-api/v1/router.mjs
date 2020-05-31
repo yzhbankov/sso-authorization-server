@@ -7,6 +7,7 @@ const router = express.Router();
 // todo: add context and auth layer set session and check by jwt
 router.get('/users', controllers.users.showAll);
 router.get('/users/:id', controllers.users.show);
+router.delete('/users/:id', controllers.users.remove);
 router.post('/users', controllers.users.save);
 
 export default router;

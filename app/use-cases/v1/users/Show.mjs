@@ -3,7 +3,6 @@ import User from '../../../model/User.mjs';
 
 export default class Show extends Base {
     static validationRules = {
-        id: ['required']
     }
 
     async execute({ id }) {
